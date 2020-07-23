@@ -11,8 +11,7 @@ public interface Patient {
     }
 
      class Diabetes implements Patient {
-        private final String state = "D";
-        private Patient patient = null;
+        private static final String state = "D";
         private boolean gotInsulin = false;
         @Override
         public String getCurrentState() {
@@ -25,22 +24,16 @@ public interface Patient {
         public void GotInsulin() {
             gotInsulin = true;
         }
-
-         public boolean checkInsulin() {
-             return gotInsulin;
-         }
-
-
     }
      class Fever implements Patient {
-        private String state = "F";
+        private final String state = "F";
         @Override
         public String getCurrentState() {
             return state;
         }
      }
      class Healthy implements Patient {
-        private String state = "H";
+        private final String state = "H";
         private boolean gotInsulin = false;
         private boolean gotAntibiotics = false;
         @Override
@@ -62,14 +55,14 @@ public interface Patient {
          }
     }
      class Tuberculosis implements Patient {
-        private String state = "T";
+        private static final String state = "T";
         @Override
         public String getCurrentState() {
             return state;
         }
     }
      class Dead implements Patient {
-        private String state = "X";
+        private static final String state = "X";
         @Override
         public String getCurrentState() {
             return state;
